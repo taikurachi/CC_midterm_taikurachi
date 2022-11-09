@@ -1,4 +1,4 @@
-explosion = [];
+//explosion = [];
 
 class Ball {
   
@@ -34,7 +34,7 @@ this.position.y += random(-15, 15);
 
 
   }
-
+/* not used
   checkEdges(){
 
   if (this.position.x > width) {
@@ -52,8 +52,8 @@ this.position.y += random(-15, 15);
        this.position.y = height;
 
   }
-
-}
+*/
+//}
 
 checkEdges2(){
 
@@ -98,10 +98,11 @@ if((this.sizingW && this.sizingH) >= 200){
 this.position.x += random(-30,30);
 this.position.y += random(-30,30);
 }
+
 }
 }
 
-
+/*
 class Explosion {
   constructor() {
     this.pos = createVector(0,0,0);
@@ -129,5 +130,5 @@ pop();
 }
 }
 
-
+*/
 

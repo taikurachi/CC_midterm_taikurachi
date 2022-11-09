@@ -76,16 +76,24 @@ checkEdges2(){
 
  display(){
   //stroke(0);
+  let gradColor = .01*17;
   strokeWeight(2);
   fill(this.R, this.G, this.B);
   ellipse(this.position.x,this.position.y, this.sizingH, this.sizingW);
-this.B = this.B - .1;
-this.G = this.G - .1;
+this.B = this.B - gradColor;
+this.G = this.G - gradColor;
 this.sizingH = this.sizingH +.1;
 this.sizingW = this.sizingW +.1;
- }
 
-
-
-
+if((this.sizingW && this.sizingH) >= 165){
+  this.sizingW=165;
+  this.sizingH=165;
+this.position.x += random(-15,15);
+this.position.y += random(-15,15);
 }
+}
+}
+
+
+
+

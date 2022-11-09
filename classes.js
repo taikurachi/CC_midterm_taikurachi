@@ -1,4 +1,4 @@
-
+explosion = [];
 
 class Ball {
   
@@ -22,6 +22,12 @@ this.sizingH = 40;
 
   }
 
+update2(){
+this.position.x += random(-15,15);
+this.position.y += random(-15, 15);
+
+
+}
   applyForce(force){
     let f = p5.Vector.div(force, this.mass);
     this.acceleration.add(f);
@@ -75,25 +81,53 @@ checkEdges2(){
 
 
  display(){
-  //stroke(0);
+  stroke(0);
   let gradColor = .01*17;
-  strokeWeight(2);
+
+  //strokeWeight(2);
   fill(this.R, this.G, this.B);
   ellipse(this.position.x,this.position.y, this.sizingH, this.sizingW);
 this.B = this.B - gradColor;
 this.G = this.G - gradColor;
-this.sizingH = this.sizingH +.1;
-this.sizingW = this.sizingW +.1;
+this.sizingH = this.sizingH + gradColor;
+this.sizingW = this.sizingW + gradColor;
 
 if((this.sizingW && this.sizingH) >= 165){
-  this.sizingW=165;
-  this.sizingH=165;
+  this.sizingW++;
+  this.sizingH++;
 this.position.x += random(-15,15);
 this.position.y += random(-15,15);
 }
 }
 }
 
+
+class Explosion {
+  constructor() {
+    this.pos = createVector(0,0,0);
+    this.vel = p5.Vector.random2D().mult(random(4, 6));
+  }
+
+update() {
+  this.pos.add(this.vel);
+
+}
+
+display() {
+push();
+
+noStroke();
+
+fill(255);
+translate(this.pos.x, this.pos.y, this.pos.z);
+sphere(10);
+
+
+pop();
+
+
+}
+}
 
 
 

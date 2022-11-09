@@ -1,7 +1,5 @@
 let b;
 
-//ball b
-//ball c
 
 function setup() {
   createCanvas(640, 360);
@@ -11,17 +9,25 @@ function setup() {
 }
 
 function draw() {
-  background(23);
+  background(231, 215, 50);
+//b.display(); 
 
 
-  let gravity = createVector(0, 1.3);
+
+
+if(keyIsPressed){
+  let gravity = createVector(0, -0.9);
   b.applyForce(gravity);
+ //b.update(); 
+  //b.checkEdges2();
+  //b.display(); 
+}
 
-  if(mouseIsPressed){
-    let wind = createVector(0.1, 0);
-    b.applyForce(wind);
-  }
+  //if(mouseIsPressed){
+    //let wind = createVector(0.5, 0);
+    //b.applyForce(wind);
 
+//b.display(); 
  
   b.update(); 
   b.checkEdges2();

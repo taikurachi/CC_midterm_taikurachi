@@ -1,20 +1,32 @@
+//let gravity = createVector(0, 0.9);
 
 class Ball {
 	
   constructor(){
      this.mass = 1;
-  	 this.position = createVector(width/2, height/2);
+  	 this.position = createVector(width/2, height-20);
      this.velocity = createVector();
      this.acceleration = createVector(0, 0);
-    
+    this.gravity = createVector(0, 0.9);
   }
 
   update(){
-
+    //this.velocity.add(this.gravity)
   	this.velocity.add(this.acceleration);
     this.position.add(this.velocity);
     this.acceleration.mult(0);
+    //this.velocity.add(this.gravity);
+    //this.position.y.add(this.velocity);
+//this.velocity += this.gravity;
+//this.position.y += this.velocity;
+if(this.position.y<250){
 
+this.velocity.sub(this.acceleration);
+    this.position.sub(this.velocity);
+        this.acceleration.div(0);
+  //this.velocity = 0;
+//this.position.y = 250;
+}
   }
 
   applyForce(force){
@@ -73,7 +85,7 @@ checkEdges2(){
   //stroke(0);
   strokeWeight(2);
   fill(255, 0, 0);
-  rect(this.position.x,this.position.y, 40, 40);
+  ellipse(this.position.x,this.position.y, 40, 40);
 
 
  }

@@ -92,11 +92,11 @@ this.G = this.G - gradColor;
 this.sizingH = this.sizingH + gradColor;
 this.sizingW = this.sizingW + gradColor;
 
-if((this.sizingW && this.sizingH) >= 165){
+if((this.sizingW && this.sizingH) >= 200){
   this.sizingW++;
   this.sizingH++;
-this.position.x += random(-15,15);
-this.position.y += random(-15,15);
+this.position.x += random(-30,30);
+this.position.y += random(-30,30);
 }
 }
 }
@@ -119,7 +119,7 @@ push();
 noStroke();
 
 fill(255);
-translate(this.pos.x, this.pos.y, this.pos.z);
+translate(this.pos.x, this.pos.y);
 sphere(10);
 
 

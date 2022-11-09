@@ -31,7 +31,7 @@ text('Escape the Box!', 205, 40);
 textSize(18);
 text('Use arrow keys to move left and right', 173, 62);
 textSize(16);
-text('Level: 1', 293, 80);
+text('Level: Easy', 293, 80);
 
   let gravity = createVector(0, 1.3); //applying realistic physics
   b.applyForce(gravity);
